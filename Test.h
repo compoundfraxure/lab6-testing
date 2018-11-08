@@ -15,6 +15,7 @@ class Test
 		void sizeTest();
 		void searchTest();
 		void addTest();
+		void removeTest();
 };
 
 
