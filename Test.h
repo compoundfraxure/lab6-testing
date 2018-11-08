@@ -10,10 +10,11 @@ class Test
 		void runTests();
 
 	private:
-		LinkedListOfInts testList;
 		void constructorTest();
 		void isEmptyTest();
 		void sizeTest();
+		void searchTest();
+		void addTest();
 };
 
 
