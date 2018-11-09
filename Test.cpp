@@ -1,4 +1,5 @@
 #include <iostream>
+#include <vector>
 #include "Test.h"
 
 Test::Test()
@@ -6,7 +7,7 @@ Test::Test()
 
 }
 
-void Test::runTests()
+void Test::runTests() const
 {
 	constructorTest();
 	isEmptyTest();
@@ -16,7 +17,7 @@ void Test::runTests()
 	removeTest();
 }
 
-void Test::constructorTest()
+void Test::constructorTest() const
 {
 	LinkedListOfInts testList;
 	std::cout << "BEGIN CONSTRUCTOR TEST" << std::endl;
@@ -50,7 +51,7 @@ void Test::constructorTest()
 	}
 }
 
-void Test::isEmptyTest()
+void Test::isEmptyTest() const
 {
 	LinkedListOfInts testList;
 	std::cout << "BEGIN ISEMPTY TEST" << std::endl;
@@ -79,7 +80,7 @@ void Test::isEmptyTest()
 	testList.addFront(4);
 	testList.addFront(4);
 	testList.addFront(4);
-	std::cout << "TEST 3 - List with multiple added elements (added with addFront) returns false - ";
+	std::cout << "TEST 3 - List with multiple added elements (added with addFront) returns false\n\t - ";
 	if (!testList.isEmpty())
 	{
 		std::cout << "\x1b[32mPASS\x1b[0m" << std::endl;
@@ -92,7 +93,7 @@ void Test::isEmptyTest()
 	testList.removeFront();
 	testList.removeFront();
 	testList.removeFront();
-	std::cout << "TEST 4 - List that once held items is now empty again (using removeFront) returns true - ";
+	std::cout << "TEST 4 - List that once held items is now empty again (using removeFront)\n\t returns true - ";
 	if (testList.isEmpty())
 	{
 		std::cout << "\x1b[32mPASS\x1b[0m" << std::endl;
@@ -116,7 +117,7 @@ void Test::isEmptyTest()
 	testList.addBack(4);
 	testList.addBack(4);
 	testList.addBack(4);
-	std::cout << "TEST 6 - List with multiple added elements (added with addBack) returns false - ";
+	std::cout << "TEST 6 - List with multiple added elements (added with addBack) returns false\n\t - ";
 	if (!testList.isEmpty())
 	{
 		std::cout << "\x1b[32mPASS\x1b[0m" << std::endl;
@@ -129,7 +130,7 @@ void Test::isEmptyTest()
 	testList.removeBack();
 	testList.removeBack();
 	testList.removeBack();
-	std::cout << "TEST 7 - List that once held items is now empty again (using removeBack) returns true - ";
+	std::cout << "TEST 7 - List that once held items is now empty again (using removeBack) returns\n\t true - ";
 	if (testList.isEmpty())
 	{
 		std::cout << "\x1b[32mPASS\x1b[0m" << std::endl;
@@ -140,7 +141,7 @@ void Test::isEmptyTest()
 	}
 }
 
-void Test::sizeTest()
+void Test::sizeTest() const
 {
 	LinkedListOfInts testList;
 	std::cout << "BEGIN SIZE TEST" << std::endl;
@@ -185,7 +186,7 @@ void Test::sizeTest()
 		testList.addFront(16);
 	}
 	listVec = testList.toVector();
-	std::cout << "TEST 4 - Size returns correct value after 102 elements added with addFront() - ";
+	std::cout << "TEST 4 - Size returns correct value after 102 elements added with addFront()\n\t - ";
 	if (testList.size() == (int) listVec.size())
 	{
 		std::cout << "\x1b[32mPASS\x1b[0m" << std::endl;
@@ -200,7 +201,7 @@ void Test::sizeTest()
 		testList.addBack(16);
 	}
 	listVec = testList.toVector();
-	std::cout << "TEST 5 - Size returns correct value after 102 elements added with addBack() - ";
+	std::cout << "TEST 5 - Size returns correct value after 102 elements added with addBack()\n\t - ";
 	if (testList.size() == (int) listVec.size())
 	{
 		std::cout << "\x1b[32mPASS\x1b[0m" << std::endl;
@@ -212,7 +213,7 @@ void Test::sizeTest()
 
 	testList.removeFront();
 	listVec = testList.toVector();
-	std::cout << "TEST 6 - Size returns correct value after 1 element removed with removeFront() - ";
+	std::cout << "TEST 6 - Size returns correct value after 1 element removed with removeFront()\n\t - ";
 	if (testList.size() == (int) listVec.size())
 	{
 		std::cout << "\x1b[32mPASS\x1b[0m" << std::endl;
@@ -224,7 +225,7 @@ void Test::sizeTest()
 
 	testList.removeBack();
 	listVec = testList.toVector();
-	std::cout << "TEST 7 - Size returns correct value after 1 element removed with removeBack() - ";
+	std::cout << "TEST 7 - Size returns correct value after 1 element removed with removeBack()\n\t - ";
 	if (testList.size() == (int) listVec.size())
 	{
 		std::cout << "\x1b[32mPASS\x1b[0m" << std::endl;
@@ -239,7 +240,7 @@ void Test::sizeTest()
 		testList.removeFront();
 	}
 	listVec = testList.toVector();
-	std::cout << "TEST 8 - Size returns correct value after 67 elements removed with removeFront() - ";
+	std::cout << "TEST 8 - Size returns correct value after 67 elements removed with removeFront()\n\t - ";
 	if (testList.size() == (int) listVec.size())
 	{
 		std::cout << "\x1b[32mPASS\x1b[0m" << std::endl;
@@ -254,7 +255,7 @@ void Test::sizeTest()
 		testList.removeBack();
 	}
 	listVec = testList.toVector();
-	std::cout << "TEST 9 - Size returns correct value after 67 elements removed with removeBack() - ";
+	std::cout << "TEST 9 - Size returns correct value after 67 elements removed with removeBack()\n\t - ";
 	if (testList.size() == (int) listVec.size())
 	{
 		std::cout << "\x1b[32mPASS\x1b[0m" << std::endl;
@@ -266,7 +267,7 @@ void Test::sizeTest()
 
 }
 
-void Test::searchTest()
+void Test::searchTest() const
 {
 	LinkedListOfInts testList;
 	std::cout << "BEGIN SEARCH TEST" << std::endl;
@@ -309,7 +310,7 @@ void Test::searchTest()
 
 	testList.removeFront();
 
-	std::cout << "TEST 4 - Searching for an item that was in the list that was removed with removeFront returns false - ";
+	std::cout << "TEST 4 - Searching for an item that was in the list that was removed with\n\t removeFront returns false - ";
 	if (!testList.search(8))
 	{
 		std::cout << "\x1b[32mPASS\x1b[0m" << std::endl;
@@ -321,7 +322,7 @@ void Test::searchTest()
 
 	testList.removeBack();
 
-	std::cout << "TEST 5 - Searching for an item that was in the list that was removed with removeBack returns false - ";
+	std::cout << "TEST 5 - Searching for an item that was in the list that was removed with\n\t removeBack returns false - ";
 	if (!testList.search(13))
 	{
 		std::cout << "\x1b[32mPASS\x1b[0m" << std::endl;
@@ -348,7 +349,7 @@ void Test::searchTest()
 
 }
 
-void Test::addTest()
+void Test::addTest() const
 {
 	LinkedListOfInts frontTest;
 	LinkedListOfInts backTest;
@@ -386,7 +387,7 @@ void Test::addTest()
 	frontTest.addFront(72);
 	frontVec = frontTest.toVector();
 
-	std::cout << "TEST 3 - addFront adds one item to the beginning of an already-populated list - ";
+	std::cout << "TEST 3 - addFront adds one item to the beginning of an already-populated list\n\t - ";
 	if (frontVec.front() == 72 && frontVec.back() == 25)
 	{
 		std::cout << "\x1b[32mPASS\x1b[0m" << std::endl;
@@ -416,7 +417,7 @@ void Test::addTest()
 	frontVec = frontTest.toVector();
 	backVec = backTest.toVector();
 
-	std::cout << "TEST 5 - addFront adds multiple items to the beginning of an already-populated list - ";
+	std::cout << "TEST 5 - addFront adds multiple items to the beginning of an already-populated\n\t list - ";
 	if (frontVec.front() == 99 && frontVec.back() == 25)
 	{
 		std::cout << "\x1b[32mPASS\x1b[0m" << std::endl;
@@ -426,7 +427,7 @@ void Test::addTest()
 		std::cout << "\x1b[31mFAIL\x1b[0m" << std::endl;
 	}
 
-	std::cout << "TEST 6 - addBack adds multiple items to the end of an already-populated list - ";
+	std::cout << "TEST 6 - addBack adds multiple items to the end of an already-populated list\n\t - ";
 	if (backVec.back() == 99 && backVec.front() == 25)
 	{
 		std::cout << "\x1b[32mPASS\x1b[0m" << std::endl;
@@ -437,7 +438,7 @@ void Test::addTest()
 	}
 }
 
-void Test::removeTest()
+void Test::removeTest() const
 {
 	LinkedListOfInts testList;
 	LinkedListOfInts singleItemA;
@@ -525,7 +526,7 @@ void Test::removeTest()
 	}
 	testVec = testList.toVector();
 
-	std::cout << "TEST 7 - For multiple removals, removeFront removes the first items in the list - ";
+	std::cout << "TEST 7 - For multiple removals, removeFront removes the first items in the list\n\t - ";
 	if (testVec.front() == 142)
 	{
 		std::cout << "\x1b[32mPASS\x1b[0m" << std::endl;
@@ -535,7 +536,7 @@ void Test::removeTest()
 		std::cout << "\x1b[31mFAIL\x1b[0m" << std::endl;
 	}
 
-	std::cout << "TEST 8 - For multiple removals, removeBack removes the last items in the list - ";
+	std::cout << "TEST 8 - For multiple removals, removeBack removes the last items in the list\n\t - ";
 	if (testVec.back() == 5)
 	{
 		std::cout << "\x1b[32mPASS\x1b[0m" << std::endl;
@@ -553,7 +554,7 @@ void Test::removeTest()
 	singleVecB = singleItemB.toVector();
 
 
-	std::cout << "TEST 9 - removeFront removes the sole item in the list and the list is now empty - ";
+	std::cout << "TEST 9 - removeFront removes the sole item in the list and the list is now empty\n\t - ";
 	if (singleVecA.empty())
 	{
 		std::cout << "\x1b[32mPASS\x1b[0m" << std::endl;
@@ -562,7 +563,7 @@ void Test::removeTest()
 	{
 		std::cout << "\x1b[31mFAIL\x1b[0m" << std::endl;
 	}
-	std::cout << "TEST 10 - removeBack removes the sole item in the list and the list is now empty - ";
+	std::cout << "TEST 10 - removeBack removes the sole item in the list and the list is now empty\n\t - ";
 	if (singleVecB.empty())
 	{
 		std::cout << "\x1b[32mPASS\x1b[0m" << std::endl;

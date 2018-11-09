@@ -7,15 +7,15 @@ class Test
 {
 	public:
 		Test();
-		void runTests();
+		void runTests() const;
 
 	private:
-		void constructorTest();
-		void isEmptyTest();
-		void sizeTest();
-		void searchTest();
-		void addTest();
-		void removeTest();
+		void constructorTest() const;
+		void isEmptyTest() const;
+		void sizeTest() const;
+		void searchTest() const;
+		void addTest() const;
+		void removeTest() const;
 };
 
 
