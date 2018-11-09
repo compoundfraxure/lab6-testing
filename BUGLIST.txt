@@ -1,0 +1,7 @@
+ - isEmpty() always returns false, both when the list is empty and when items have been added to it
+ - search() returns false when searching for an item that has more than one instance in the list when it should return true
+ - addBack() adds items to the list, but not to the proper place (I assume that it adds them to the front of the list)
+ - removeFront() and removeBack() don't actually remove the items from the list and instead just update the size of the list accordingly
+ - removeFront() and removeBack() always return false, even when there is an item in the list to remove
+ - Because removeFront() and removeBack() don't work, the destructor can't delete the whole list resulting in a whole bunch of memory leaks
+ - The constructor and size() are the only methods that work perfectly (and getVector(), of course)
